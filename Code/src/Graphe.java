@@ -1,5 +1,6 @@
-/* Représentation d'un graphe */
+/* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
 public class Graphe {
+private List listSucesseur<Arc>;
 
 /* Construction : Complexité =  */
 public Graphe(){
