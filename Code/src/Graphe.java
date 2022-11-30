@@ -1,14 +1,9 @@
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
 public class Graphe {
-private List listSucesseur<Arc>;
+private List listSucesseur<Arc> = new ArrayList<>();
 
 /* Construction : Complexité =  */
 public Graphe(){
-
-}
-
-/* Preflot : Complexité =  */
-public void preflot(){
 
 }
 
