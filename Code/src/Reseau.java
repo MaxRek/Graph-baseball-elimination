@@ -2,6 +2,7 @@ import java.util.Scanner;
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
 public class Reseau { 
 private Equipe equipes[];
+private Graphe reseau;
 
 /* Constructeur Reseau: Complexité =  O( ) */
 public Reseau(){
