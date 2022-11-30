@@ -5,7 +5,7 @@ import Entity.*;
 public class main {  
 	public  static  void main (String [] arguments) {  
 		System.out.println("Bonjour le monde") ;  
-		System.out.println(new Arc(10,1,2));
+		Graphe = new Graphe()
 		System.exit(0) ;  
 	}
 }
