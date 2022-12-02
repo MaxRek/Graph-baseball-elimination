@@ -1,7 +1,5 @@
 package Entity.ListeSuccesseur;
 
-import Entity.Arc;
-
 public class Successeur {
     
     private int name;
@@ -47,10 +45,9 @@ public class Successeur {
     public String toString(){
         String str = "";
         if(this.suivant != null){
-            str = "\n  [ " + this.name + " , arc " + this.getArc().toString() + "]" + this.suivant +"\n";
+            str = "\n  [ " + this.name + " , arc " + this.getArc().toString() + "]" + this.suivant ;
         } else {
             str = "\n  [ " + this.name + " , arc " + this.getArc().toString() + "]";
-
         }
         
         return str;

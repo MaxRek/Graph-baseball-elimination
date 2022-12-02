@@ -1,9 +1,9 @@
-package Entity;
+package Entity.ListeSuccesseur;
 
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
 public class Arc { 
   
-  private final int capacite;
+  private int capacite;
   private int flot;
   private int connecteA;
 
@@ -21,14 +21,21 @@ public class Arc {
     } else {
       System.out.println("Impossible de mettre un flot "+x+" vers "+connecteA+" supérieur à la capacité "+capacite);
     }
-    
+  }
+
+  public void setCapacite(int x){
+    this.capacite = x;
   }
   
+  public int getCapacite(){
+    return this.capacite;
+  }
+
   public int getFlot(int x){
     return this.flot;
   }
 
   public String toString(){
-    return "(Capacité : "+this.capacite+" , flot : "+this.flot+" ,connecté : "+this.connecteA+")";
+    return "(Capacite : "+this.capacite+" , flot : "+this.flot+" ,connecte : "+this.connecteA+")";
   }
 }

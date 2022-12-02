@@ -1,8 +1,5 @@
 package Entity;
 
-import java.lang.reflect.Array;
-import java.util.LinkedList;
-
 import Entity.ListeSuccesseur.*;
 
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
@@ -10,9 +7,7 @@ public class Graphe {
     
     private ListeSuccesseur listSuccesseur[];
 
-    // public Graphe(int nbS){
-    //     this.listSuccesseur = new ListeSuccesseur[];
-    // }
+    /* Construction : Complexité =  */
 
     /* Construction : Complexité =  */
     public Graphe(int nbS){
@@ -27,8 +22,8 @@ public class Graphe {
 
     }
 
-    public void addInListSuccesseur (int i, int s, Arc a){
-        this.listSuccesseur[i].addSuccesseur(new Successeur(s,a));
+    public void addInListSuccesseur (int i, int s, int f, int c){
+        this.listSuccesseur[i].addSuccesseur(new Successeur(s,new Arc(c, f)));
     }
 
     public void delInListSuccesseur (int i, int s){
