@@ -15,12 +15,15 @@ public class Arc {
   }
 
   /* getters et setters : Complexité = O(1) */
-  public void setFlot(int x){
-    if(x<=this.capacite){
-      this.flot += x;
+  public void setFlot(int f){
+    if(f<=this.capacite){
+      this.flot += f;
     } else {
-      System.out.println("Impossible de mettre un flot "+x+" vers "+connecteA+" supérieur à la capacité "+capacite);
+      System.out.println("Impossible de mettre un flot "+f+" supérieur à la capacité "+capacite);
     }
+  }
+  public void setFlotForce(int f){
+    this.flot += f;
   }
 
   public void setCapacite(int x){
@@ -31,7 +34,7 @@ public class Arc {
     return this.capacite;
   }
 
-  public int getFlot(int x){
+  public int getFlot(){
     return this.flot;
   }
 

@@ -2,7 +2,7 @@ package Entity.ListeSuccesseur;
 
 public class ListeSuccesseur {
 
-    private Successeur premier;
+    protected Successeur premier;
 
     public ListeSuccesseur(){
         this.premier = null;
@@ -71,10 +71,7 @@ public class ListeSuccesseur {
                     }
                 }
             }
-
-        } 
-        
-        
+        }    
     }
 
     public String toString(){

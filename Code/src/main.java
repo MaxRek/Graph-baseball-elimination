@@ -1,8 +1,8 @@
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
 import java.lang.reflect.Array;
 
-import Entity.*;
-import Entity.ListeSuccesseur.*;
+import Entity.Graph.Graphe;
+import Entity.Graph.GrapheFlots;
 import Methods.TP;
 
 public class main {  
@@ -14,8 +14,9 @@ public class main {
 			{88,7,6,0,-1,1},
 			{86,5,1,3,1,-1}
 		};
-		Graphe test = TP.init_Graph(data);
-		System.out.println(test);
+		GrapheFlots test = TP.init_Graph(data);		
+		test.detectErrorFlots();
+		//System.out.println(test);
 		System.exit(0) ; 
 	}
 }

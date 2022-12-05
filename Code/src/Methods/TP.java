@@ -1,17 +1,16 @@
 package Methods;
 
-import Entity.Graphe;
+import Entity.Graph.*;
 
 public class TP {
-    
-    public static Graphe init_Graph(int[][] data){
-        
+
+    public static GrapheFlots init_Graph(int[][] data){
         int nbE = data.length;
         int nbT = 2+nbE+(nbE-1)+(((nbE-2)*(nbE-1))/2); //nb total de sommets
         int a = 1; //sert pour les matchs entre équipe
         int b = 2;
 
-        Graphe graph = new Graphe(nbT);
+        GrapheFlots graph = new GrapheFlots(nbT);
 
         for (int i = 1 ; i<nbT-1 ; i++){ 
             if(i<=nbE){
@@ -35,8 +34,8 @@ public class TP {
                 b = b + 1;
                 }
             }
-            System.out.println("a = "+a+" ,b = "+b+" , b+1 = "+(b+1));
+            //System.out.println("a = "+a+" ,b = "+b+" , b+1 = "+(b+1));
         }
-        return graph;
+        return graph; 
     }
 }

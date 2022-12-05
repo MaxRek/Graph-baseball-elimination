@@ -1,6 +1,8 @@
 package Entity;
 
 import java.util.Scanner;
+
+import Entity.Graph.Graphe;
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
 public class Reseau { 
 private Equipe equipes[];
