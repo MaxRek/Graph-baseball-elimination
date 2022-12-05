@@ -5,7 +5,7 @@ public class Arc {
   
   private int capacite;
   private int flot;
-  private int connecteA;
+  //private int connecteA;
 
   /* Constructeurs arc : Complexité = O(1) */
   public Arc(int f, int c){

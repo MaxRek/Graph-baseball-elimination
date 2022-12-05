@@ -7,12 +7,12 @@ public class GrapheFlots extends Graphe{
     
     private int S;
     private int T;
-    private ListeSuccesseur listSuccesseurRes[];
+    private GrapheRes graphR;
     //private GrapheRes graphR;
 
     public GrapheFlots(int nbS){
         super(nbS);
-        this.listSuccesseurRes = null;
+        this.graphR = new GrapheRes(nbS);
         this.S = 0;
         this.T = nbS;
         //this.graphR = null;
@@ -60,6 +60,14 @@ public class GrapheFlots extends Graphe{
             errors[T] = 1;
         }
         return errors;
+    }
+
+    public void init_GraphRes(){
+        this.graphR.init_GraphRes(this.listSuccesseur);
+    }
+
+    public GrapheRes getGraphR(){
+        return this.graphR;
     }
 
     public String toString(){

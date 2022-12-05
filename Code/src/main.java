@@ -16,7 +16,9 @@ public class main {
 		};
 		GrapheFlots test = TP.init_Graph(data);		
 		test.detectErrorFlots();
-		//System.out.println(test);
+		test.init_GraphRes();
+
+		System.out.println(test.getGraphR());
 		System.exit(0) ; 
 	}
 }
