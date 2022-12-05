@@ -8,10 +8,10 @@ public class Arc {
   private int connecteA;
 
   /* Constructeurs arc : Complexité = O(1) */
-  public Arc(int c, int a){
+  public Arc(int f, int c){
+    this.flot = f;
     this.capacite = c;
-    this.flot = 0;
-    this.connecteA = a;
+    // this.connecteA = a;
   }
 
   /* getters et setters : Complexité = O(1) */
@@ -36,6 +36,6 @@ public class Arc {
   }
 
   public String toString(){
-    return "(Capacite : "+this.capacite+" , flot : "+this.flot+" ,connecte : "+this.connecteA+")";
+    return "(Flot : "+this.flot+" , Capacite : "+this.capacite+")";
   }
 }

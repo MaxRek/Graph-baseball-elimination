@@ -23,7 +23,7 @@ public class Graphe {
     }
 
     public void addInListSuccesseur (int i, int s, int f, int c){
-        this.listSuccesseur[i].addSuccesseur(new Successeur(s,new Arc(c, f)));
+        this.listSuccesseur[i].addSuccesseur(new Successeur(s,new Arc(f, c)));
     }
 
     public void delInListSuccesseur (int i, int s){
