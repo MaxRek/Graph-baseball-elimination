@@ -45,6 +45,10 @@ public class Equipe{
     return this.win ;
   }
 
+  public String getName(){
+    return this.name ;
+  }
+
   public void setmatchRestants(int nbMatch){
     this.matchRestants = nbMatch ;
   }
