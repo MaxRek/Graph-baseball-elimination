@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import Entity.Graph.Graphe;
 import Entity.Graph.GrapheFlots;
 import Methods.TP;
+import Methods.Tools;
 
 public class main {  
 	public  static  void main (String [] arguments) {  		
@@ -14,11 +15,20 @@ public class main {
 			{88,7,6,0,-1,1},
 			{86,5,1,3,1,-1}
 		};
-		GrapheFlots test = TP.init_Graph(data);		
-		test.detectErrorFlots();
-		test.init_GraphRes();
 
-		System.out.println(test.getGraphR());
+		for(int i = 0;i<data.length;i++){
+			Tools.printIntArray(data[i]);
+		}
+		System.out.println(data.length);
+		int[][] dataM = Tools.copyMatrixWithoutTeam(data, 0);
+		for(int i = 0;i<dataM.length;i++){
+			Tools.printIntArray(dataM[i]);
+		} 
+		//GrapheFlots test = TP.init_Graph(data,0);		
+		//test.detectErrorFlots();
+		//test.init_GraphRes();
+		//System.out.println(test);
+		//System.out.println(test.getGraphR());
 		System.exit(0) ; 
 	}
 }
