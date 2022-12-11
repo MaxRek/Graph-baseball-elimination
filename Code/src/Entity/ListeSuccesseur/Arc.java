@@ -5,22 +5,25 @@ public class Arc {
   
   private int capacite;
   private int flot;
-  private int connecteA;
+  //private int connecteA;
 
   /* Constructeurs arc : Complexité = O(1) */
-  public Arc(int c, int a){
+  public Arc(int f, int c){
+    this.flot = f;
     this.capacite = c;
-    this.flot = 0;
-    this.connecteA = a;
+    // this.connecteA = a;
   }
 
   /* getters et setters : Complexité = O(1) */
-  public void setFlot(int x){
-    if(x<=this.capacite){
-      this.flot += x;
+  public void setFlot(int f){
+    if(f<=this.capacite){
+      this.flot += f;
     } else {
-      System.out.println("Impossible de mettre un flot "+x+" vers "+connecteA+" supérieur à la capacité "+capacite);
+      System.out.println("Impossible de mettre un flot "+f+" supérieur à la capacité "+capacite);
     }
+  }
+  public void setFlotForce(int f){
+    this.flot += f;
   }
 
   public void setCapacite(int x){
@@ -31,11 +34,11 @@ public class Arc {
     return this.capacite;
   }
 
-  public int getFlot(int x){
+  public int getFlot(){
     return this.flot;
   }
 
   public String toString(){
-    return "(Capacite : "+this.capacite+" , flot : "+this.flot+" ,connecte : "+this.connecteA+")";
+    return "(Flot : "+this.flot+" , Capacite : "+this.capacite+")";
   }
 }

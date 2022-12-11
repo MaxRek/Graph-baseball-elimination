@@ -1,11 +1,11 @@
-package Entity;
+package Entity.Graph;
 
 import Entity.ListeSuccesseur.*;
 
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
 public class Graphe {
     
-    private ListeSuccesseur listSuccesseur[];
+    protected ListeSuccesseur listSuccesseur[];
 
     /* Construction : Complexité =  */
 
@@ -22,8 +22,12 @@ public class Graphe {
 
     }
 
+    public ListeSuccesseur[] getListSuccesseur(){
+        return this.listSuccesseur;
+    }
+
     public void addInListSuccesseur (int i, int s, int f, int c){
-        this.listSuccesseur[i].addSuccesseur(new Successeur(s,new Arc(c, f)));
+        this.listSuccesseur[i].addSuccesseur(new Successeur(s,new Arc(f, c)));
     }
 
     public void delInListSuccesseur (int i, int s){
