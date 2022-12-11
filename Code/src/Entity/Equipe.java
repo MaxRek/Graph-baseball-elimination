@@ -61,7 +61,7 @@ public class Equipe{
     this.matchsContre[index] = nbMatch;
   }
 
-  public int getmatchRestants(int index){
+  public int getmatchsContre(int index){
     return this.matchsContre[index] ;
 }
 
