@@ -1,6 +1,6 @@
 package Entity;
 
-import java.util.Scanner;
+import java.util.*;
 import Methods.*;
 import java.io.FileNotFoundException;
 
@@ -32,6 +32,30 @@ public GrapheFlots constructionReseau(int i){
   return TP.init_Graph(data, i);
 }
 
+/* ConstructionReseau : Complexité =  */
+public int dichoElimination(){
+  int deb = 0;
+  int end = this.nbEquipes - 1;
+  int milieu = end/2;
+  Boolean continuing = true;
+  int trouve = 0;
+  while(continuing){
+    if(testEliminationEquipe(milieu)){
+      trouve = milieu;
+      deb = milieu;
+      milieu = deb + (end-deb)/2;
+    } else {
+      if((trouve>milieu && trouve>0)||(deb<end && trouve==0)){
+        end = milieu;
+        milieu = deb + (end-deb)/2;
+      } else {
+        continuing = false;
+      }
+    }
+  }
+  return trouve;
+}
+
 /* TestEliminationEquipe : Complexité =  */
 public Boolean testEliminationEquipe(int elimine){
   GrapheFlots G = constructionReseau(elimine);
@@ -48,6 +72,24 @@ public Equipe[][] testEliminationToutes(int elimine){
   }
   Equipe resume[][] = {equipesEliminees, equipesEnLice};
   return resume;
+}
+
+/* global : Complexité =  */
+public Equipe[][] global(){
+  Arrays.sort(this.equipes, new Comparator<Equipe>() {
+    public int compare(Equipe one,Equipe other) {
+    int scorePotentiel = one.getmatchRestants() + one.getWin();
+    int scorePotentielOther = other.getmatchRestants() + other.getWin();
+    return scorePotentiel-scorePotentielOther;
+  }
+  });
+  int elimine = dichoElimination();
+  if (elimine>0){
+    return testEliminationToutes(elimine);
+  } else {
+    Equipe resume[][] = { null , this.equipes};
+    return resume;
+  }
 }
 
 }
