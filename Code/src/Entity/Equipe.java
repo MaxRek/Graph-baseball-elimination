@@ -1,7 +1,7 @@
 package Entity;
 
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
-public class Equipe{
+public class Equipe {
   private String name;
   private int win;
   private int matchRestants;
@@ -61,7 +61,7 @@ public class Equipe{
     this.matchsContre[index] = nbMatch;
   }
 
-  public int getmatchRestants(int index){
+  public int getmatchsContre(int index){
     return this.matchsContre[index] ;
 }
 

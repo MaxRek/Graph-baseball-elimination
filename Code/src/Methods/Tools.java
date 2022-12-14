@@ -1,5 +1,7 @@
 package Methods;
 
+import Entity.Equipe;
+
 public class Tools {
     
     public static void printIntArray(int[] a){
@@ -40,4 +42,5 @@ public class Tools {
         }        
         return mRet;
     }
+
 }

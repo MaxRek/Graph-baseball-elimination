@@ -17,11 +17,6 @@ public class Graphe {
         }
     }
 
-    /* FordFulkerson : Complexité =  */
-    public void fordFulkerson(){
-
-    }
-
     public ListeSuccesseur[] getListSuccesseur(){
         return this.listSuccesseur;
     }

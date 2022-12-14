@@ -70,6 +70,12 @@ public class GrapheFlots extends Graphe{
         return this.graphR;
     }
 
+    
+    /* FordFulkerson : Complexité =  */
+    public Boolean fordFulkerson(){
+        return true;
+    }
+    
     public String toString(){
         return super.toString();
     }

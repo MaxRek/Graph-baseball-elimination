@@ -10,11 +10,12 @@ import java.io.FileNotFoundException;
 
 public class Parser{
     public Equipe equipes[];
+    public int nbEquipe;
 
     public Parser(String nameFile)throws FileNotFoundException{
        FileReader file = new  FileReader(nameFile);         
       Scanner scanner = new Scanner(file);  
-      int nbEquipe = Integer.parseInt(scanner.nextLine());
+      nbEquipe = Integer.parseInt(scanner.nextLine());
       equipes = new Equipe[nbEquipe];
       String team[] = new String[nbEquipe + 3];
       int i = 0;
