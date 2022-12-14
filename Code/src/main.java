@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 
 public class main {  
 	public  static  void main (String [] arguments) throws FileNotFoundException{  
-      Parser p = new Parser("../Data/exemple.txt");
+      Parser p = new Parser("../../Data/exemple.txt");
 		System.out.println(p.equipes[0].getmatchRestants());
 		int[][] data = 
 		{
