@@ -64,5 +64,12 @@ public class Equipe {
   public int getmatchsContre(int index){
     return this.matchsContre[index] ;
 }
-
+  public String toString(){
+    String str = "["+this.win+" ,"+this.matchRestants+ " ,[ ";
+    for(int i = 0;i<matchsContre.length;i++){
+      str += matchsContre[i]+" ";
+    }
+    str += "]";
+    return str+" ,"+this.name+"]";
+  }
 }

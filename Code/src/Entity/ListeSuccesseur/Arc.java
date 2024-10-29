@@ -5,21 +5,27 @@ public class Arc {
   
   private int capacite;
   private int flot;
-  //private int connecteA;
+  private boolean residuel; //faux si dans un graphe, vrai dans un résiduel
 
   /* Constructeurs arc : Complexité = O(1) */
   public Arc(int f, int c){
     this.flot = f;
     this.capacite = c;
-    // this.connecteA = a;
+    this.residuel = false;
+  }
+  public Arc(int f, int c, Boolean b){
+    this.flot = f;
+    this.capacite = c;
+    this.residuel = b;
   }
 
   /* getters et setters : Complexité = O(1) */
   public void setFlot(int f){
     if(f<=this.capacite){
-      this.flot += f;
+      this.flot = f;
     } else {
-      System.out.println("Impossible de mettre un flot "+f+" supérieur à la capacité "+capacite);
+      System.out.println("Impossible de mettre un flot "+f+" superieur a la capacite "+capacite + " ; Fin du programme");
+      System.exit(1);
     }
   }
   public void setFlotForce(int f){
@@ -38,7 +44,29 @@ public class Arc {
     return this.flot;
   }
 
+  public int getFlotRestant(){
+    int f = 0;
+    if(!this.residuel){
+      f = this.capacite - this.flot;
+    } else {
+      f = this.flot;
+    }
+    return f;
+  }
+
+  public void setResiduel(Boolean b){
+    this.residuel = b;
+  }
+
+  public Boolean getResiduel(){
+    return this.residuel;
+  }
+
   public String toString(){
-    return "(Flot : "+this.flot+" , Capacite : "+this.capacite+")";
+    String str = "(Flot : "+this.flot+" , Capacite : "+this.capacite;
+    if(this.residuel){
+      str += " ,residuel";
+    }
+    return str + ")";
   }
 }

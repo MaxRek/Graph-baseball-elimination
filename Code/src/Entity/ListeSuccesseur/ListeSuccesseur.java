@@ -34,6 +34,31 @@ public class ListeSuccesseur {
         }
     }
 
+
+    public void updateFlotSuccesseur(int se, int f, int c, Boolean r){
+        if(this.premier == null){ // si la liste est vide, on ajoute un sucesseur avec le flot ajouté
+            this.premier = new Successeur(se, new Arc(f, c, r));
+        } else {
+            Boolean end = false;
+            Successeur s = this.premier;
+            while(!end){
+                if(s.getName()==se){
+                    end = true;
+                    s.getArc().setFlot(f);
+                }
+                if(!end){
+                    if (s.getSuivant()!=null){
+                        s = s.getSuivant();
+                    } else {
+                        s.setSuivant(new Successeur(se,new Arc(f, c, r)));
+                        end = true;
+                    }
+                }
+            }
+        }
+    }
+
+
     public void delSuccesseur(int n){
         if(this.premier != null){
             Successeur s = this.premier;
@@ -76,7 +101,7 @@ public class ListeSuccesseur {
 
     public String toString(){
         if(this.premier == null){
-            return "vide";
+            return null;
         } else {
             return this.premier.toString();
         }

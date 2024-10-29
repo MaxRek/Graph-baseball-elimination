@@ -1,5 +1,7 @@
 package Entity.Graph;
 
+import java.util.ArrayList;
+
 import Entity.ListeSuccesseur.*;
 import Methods.Tools;
 
@@ -72,8 +74,38 @@ public class GrapheFlots extends Graphe{
 
     
     /* FordFulkerson : Complexité =  */
-    public Boolean fordFulkerson(){
-        return true;
+    public void fordFulkerson(){
+        Boolean stop = false;
+        // System.out.println("====================\n     \nDEBUT FF\n    \n====================");
+
+        // System.out.println(" graphR = "+graphR);
+        while(!stop){
+            // System.out.println("====================\n     Nouvelle iteration FF    \n====================");
+            ArrayList<Integer> path = this.graphR.findPath();
+            // System.out.println("path = "+path);
+            if(path.size()!=0){
+                // System.out.println("maxflots = "+this.getGraphR().getMaxPossibleFlot(path));
+            }
+            if(path.size()!=0){
+                this.getGraphR().addFlot(path, this.getGraphR().getMaxPossibleFlot(path));
+            } else {
+                stop = true;
+            }
+            // System.out.println(" -----------\ngraphR = "+graphR);
+        }
+        // System.out.println("====================\nFIN FF\n====================");
+    }
+
+    public Boolean test(){
+        Boolean possible = false;
+        this.init_GraphRes();
+        this.fordFulkerson();
+        ListeSuccesseur ls = this.getGraphR().getListSuccesseur()[0];
+        // System.out.print("ls = "+ls+"\n");
+        if(ls.getSuccesseur()==null){
+            possible = true;
+        }
+        return possible;
     }
     
     public String toString(){

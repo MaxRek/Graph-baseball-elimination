@@ -18,6 +18,12 @@ public class Tools {
         System.out.println(str);
     }
 
+    public static void printMatrixArray(int[][] m){
+        for(int i = 0; i<m.length;i++){
+            printIntArray(m[i]);
+        }
+    }
+
     public static int[][] copyMatrixWithoutTeam(int[][] M, int e){
         
         int a = -1;

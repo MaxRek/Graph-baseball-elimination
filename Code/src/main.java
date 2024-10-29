@@ -1,41 +1,26 @@
 /* Marchau Coralie - Rekar Maxime : Projet Graphes II et Réseaux 2022 */
-import java.lang.reflect.Array;
-
-import Entity.Graph.Graphe;
-import Entity.Graph.GrapheFlots;
-import Methods.TP;
-import Methods.Tools;
-import Entity.*;
-import Entity.ListeSuccesseur.*;
-import Methods.*;
-import java.io.IOException;
+import java.util.ArrayList;
+import Entity.Reseau;
+import Entity.Equipe;
 import java.io.FileNotFoundException;
 
 public class main {  
 	public  static  void main (String [] arguments) throws FileNotFoundException{  
-      Parser p = new Parser("../../Data/exemple.txt");
-		System.out.println(p.equipes[0].getmatchRestants());
-		int[][] data = 
-		{
-			{93,8,-1,1,6,1},
-			{89,4,1,-1,0,3},
-			{88,7,6,0,-1,1},
-			{86,5,1,3,1,-1}
-		};
-
-		for(int i = 0;i<data.length;i++){
-			Tools.printIntArray(data[i]);
+		Reseau r = new Reseau("../../Data/ex1.txt");
+		
+		ArrayList<Equipe> elimines = r.global();
+		System.out.println("\n==Coralie Marchau et Maxime REKAR==\n-------Graphes II et Reseaux-------\n======Elimination au baseball======\n");
+		if(elimines.size() > 0 ){
+			System.out.println("Les equipes perdantes sont : ");
+			for(int i = 0 ;i <elimines.size();i++){
+				System.out.println("   - "+elimines.get(i).getName());
+			}
+		} else {
+			System.out.println("Aucune équipe n'a enore été eliminé");
 		}
-		System.out.println(data.length);
-		int[][] dataM = Tools.copyMatrixWithoutTeam(data, 0);
-		for(int i = 0;i<dataM.length;i++){
-			Tools.printIntArray(dataM[i]);
-		} 
-		//GrapheFlots test = TP.init_Graph(data,0);		
-		//test.detectErrorFlots();
-		//test.init_GraphRes();
-		//System.out.println(test);
-		//System.out.println(test.getGraphR());
+		System.out.println("\n");
+
+	
 		System.exit(0); 
 	}
 }
