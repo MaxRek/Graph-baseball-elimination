@@ -17,12 +17,17 @@ A la fin des matchs inter-divisions, on peut facilement voir la (ou les) gagnant
 avant au premier coup d’oeil. De par l’utilisation de graphes de flots, nous allons faire un programme permettant
 en tout temps de la saison de voir les équipes éliminées et celles encore en lice.
 
-Prenons l'exemple dans "Data"
-     Equipe        Score  Nb Jeux restants NY Bos Tor Bal
-New York Yankees     93   8                 -  1   6   1
-Boston Red Sox       89   4                 1  -   0   3
-Toronto Blue Jays    88   7                 6  0   -   1
-Baltimore Orioles    86   5                 1  3   1   -
+Prenons l'exemple dans "Data/ex1.txt"
+
+Equipe____________Score___NbJeuxRestants__NY__Bos_Tor_Bal
+
+New York Yankees___93___________8_________-___1___6___1
+
+Boston Red Sox______89___________4_________1___-___0___3
+
+Toronto Blue Jays____88___________7_________6___0___-___1
+
+Baltimore Orioles____86___________5_________1___3___1___-
 
 Pour savoir si l’équipe i (dans l’exemple suivant, nous choisissons l’équipe 3 : les Torontos Blue Jays) est toujours
 en lice, nous faisons un graphe de flot de la forme suivante. De la source, on lie des sommets correspondants aux
